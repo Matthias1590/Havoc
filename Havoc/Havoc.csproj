@@ -54,6 +54,16 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoMod\MonoMod\MonoMod.csproj">
+      <Project>{8a17c958-5c33-4035-af76-f94a3aa2dc4f}</Project>
+      <Name>MonoMod</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(TargetDir)\MonoMod.exe Assembly-CSharp.dll</PostBuildEvent>
+  </PropertyGroup>
 </Project>

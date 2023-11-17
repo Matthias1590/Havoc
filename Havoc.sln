@@ -5,6 +5,17 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havoc", "Havoc\Havoc.csproj", "{0319D30A-184F-4D4F-B3F5-5939B76B3F5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MonoMod", "MonoMod", "{258250EA-1B5F-42EA-A383-FD47A393AA2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{601067CD-A7E5-44F6-8D56-8382BFB56894}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoMod.Utils", "MonoMod\MonoMod.Utils\MonoMod.Utils.csproj", "{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoMod", "MonoMod\MonoMod\MonoMod.csproj", "{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +38,37 @@ Global
 		{0319D30A-184F-4D4F-B3F5-5939B76B3F5D}.ReleaseLegacy|Any CPU.Build.0 = Release|Any CPU
 		{0319D30A-184F-4D4F-B3F5-5939B76B3F5D}.ReleaseTrace|Any CPU.ActiveCfg = Release|Any CPU
 		{0319D30A-184F-4D4F-B3F5-5939B76B3F5D}.ReleaseTrace|Any CPU.Build.0 = Release|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.DebugLegacy|Any CPU.ActiveCfg = DebugLegacy|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.DebugLegacy|Any CPU.Build.0 = DebugLegacy|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.DebugTrace|Any CPU.ActiveCfg = DebugTrace|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.DebugTrace|Any CPU.Build.0 = DebugTrace|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.ReleaseLegacy|Any CPU.ActiveCfg = ReleaseLegacy|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.ReleaseLegacy|Any CPU.Build.0 = ReleaseLegacy|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.ReleaseTrace|Any CPU.ActiveCfg = ReleaseTrace|Any CPU
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A}.ReleaseTrace|Any CPU.Build.0 = ReleaseTrace|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.DebugLegacy|Any CPU.ActiveCfg = DebugLegacy|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.DebugLegacy|Any CPU.Build.0 = DebugLegacy|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.DebugTrace|Any CPU.ActiveCfg = DebugTrace|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.DebugTrace|Any CPU.Build.0 = DebugTrace|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.ReleaseLegacy|Any CPU.ActiveCfg = ReleaseLegacy|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.ReleaseLegacy|Any CPU.Build.0 = ReleaseLegacy|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.ReleaseTrace|Any CPU.ActiveCfg = ReleaseTrace|Any CPU
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F}.ReleaseTrace|Any CPU.Build.0 = ReleaseTrace|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1839CFE2-3DB0-45A8-B03D-9AA797479A3A} = {258250EA-1B5F-42EA-A383-FD47A393AA2C}
+		{8A17C958-5C33-4035-AF76-F94A3AA2DC4F} = {258250EA-1B5F-42EA-A383-FD47A393AA2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3593AF84-5BC4-4AD2-8D8A-F1FBE5830EFA}

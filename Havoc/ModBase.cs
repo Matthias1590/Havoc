@@ -17,9 +17,5 @@ namespace Havoc.Helpers
         public virtual void Initialize()
         {
         }
-
-        public virtual void RegisterItems(IRegistry<Item> itemRegistry)
-        {
-        }
 	}
 }

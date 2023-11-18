@@ -1,7 +1,10 @@
-﻿namespace Havoc.Mod.Registries
+﻿using System.Collections.Generic;
+
+namespace Havoc.Mod.Registries
 {
 	public interface IRegistry<T>
 	{
-		void Add(T value);
+		void Add(T item);
+		IEnumerable<T> GetValues();
 	}
 }

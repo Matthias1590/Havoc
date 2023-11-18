@@ -1,10 +1,11 @@
 ﻿using Autofac;
 using Havoc.Extensions;
 using Havoc.Helpers;
+using Havoc.Mod.Registries;
+using Havoc.Registries;
 using Serilog;
 using System;
 using System.IO;
-using UnityEngine;
 
 namespace Havoc
 {
@@ -63,7 +64,7 @@ namespace Havoc
 			builder.RegisterType<ModLoader>().AsSelf().SingleInstance();
 
 			// Registries
-			//builder.RegisterType<>();
+			builder.RegisterType<ItemRegistry>().As<IItemRegistry>().SingleInstance();
 
 			// TODO: Some sort of config.
 			// Could replace the path provider

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0B8354D2-0243-4B6A-841B-3F8580C139E3}</ProjectGuid>
+    <ProjectGuid>{FAA3DC81-EF1E-4B59-BFC3-F60961E264CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HavocLoader</RootNamespace>
-    <AssemblyName>Assembly-CSharp.HavocLoader.mm</AssemblyName>
+    <RootNamespace>ExampleMod</RootNamespace>
+    <AssemblyName>ExampleMod</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -34,49 +34,88 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\Assemblies\Assembly-CSharp.dll</HintPath>
+    <Reference Include="AmazingAssets.TerrainToMesh">
+      <HintPath>..\Assemblies\AmazingAssets.TerrainToMesh.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Havoc\bin\Debug\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientNetworkTransform, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\ClientNetworkTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="DissonanceVoip, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\DissonanceVoip.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch Transport for Netcode for GameObjects, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\Facepunch Transport for Netcode for GameObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\Assemblies\Mono.Security.dll</HintPath>
     </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\netstandard.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.2.5.0\lib\net46\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Formatting.Compact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.Formatting.Compact.1.0.0\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Seq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.Sinks.Seq.4.0.0\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
+      <HintPath>..\packages\Serilog.2.0.0\lib\net45\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\Assemblies\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel.Internals, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\System.ServiceModel.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Unity.AI.Navigation">
+    <Reference Include="Unity.AI.Navigation, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.AI.Navigation.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Animation.Rigging">
+    <Reference Include="Unity.Animation.Rigging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Animation.Rigging.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Animation.Rigging.DocCodeExamples">
       <HintPath>..\Assemblies\Unity.Animation.Rigging.DocCodeExamples.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst">
+    <Reference Include="Unity.Burst, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
@@ -91,16 +130,20 @@
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>..\Assemblies\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Unsafe">
+    <Reference Include="Unity.Burst.Unsafe, Version=4.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Collections">
+    <Reference Include="Unity.Collections, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+    <Reference Include="Unity.Collections.LowLevel.ILSupport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InputSystem">
+    <Reference Include="Unity.InputSystem, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
@@ -109,16 +152,20 @@
     <Reference Include="Unity.Jobs">
       <HintPath>..\Assemblies\Unity.Jobs.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
+    <Reference Include="Unity.Mathematics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.Common">
+    <Reference Include="Unity.Multiplayer.Tools.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.MetricTypes">
+    <Reference Include="Unity.Multiplayer.Tools.MetricTypes, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.MetricTypes.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.NetStats">
+    <Reference Include="Unity.Multiplayer.Tools.NetStats, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Component">
@@ -130,25 +177,31 @@
     <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Implementation">
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.NetStatsMonitor.Implementation.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.NetStatsReporting">
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsReporting, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.NetStatsReporting.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Runtime">
+    <Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.NetworkProfiler.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
+    <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.Util">
       <HintPath>..\Assemblies\Unity.Multiplayer.Tools.Util.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Netcode.Components">
+    <Reference Include="Unity.Netcode.Components, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Netcode.Components.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Netcode.Runtime">
+    <Reference Include="Unity.Netcode.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Netcode.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Networking.Transport">
+    <Reference Include="Unity.Networking.Transport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Networking.Transport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
@@ -166,19 +219,23 @@
     <Reference Include="Unity.ProBuilder.Stl">
       <HintPath>..\Assemblies\Unity.ProBuilder.Stl.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Profiling.Core">
+    <Reference Include="Unity.Profiling.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Profiling.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+    <Reference Include="Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>..\Assemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
@@ -187,7 +244,8 @@
     <Reference Include="Unity.Services.Authentication">
       <HintPath>..\Assemblies\Unity.Services.Authentication.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core">
+    <Reference Include="Unity.Services.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
@@ -205,7 +263,8 @@
     <Reference Include="Unity.Services.Core.Environments.Internal">
       <HintPath>..\Assemblies\Unity.Services.Core.Environments.Internal.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core.Internal">
+    <Reference Include="Unity.Services.Core.Internal, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Services.Core.Internal.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Networking">
@@ -226,17 +285,17 @@
     <Reference Include="Unity.Services.QoS">
       <HintPath>..\Assemblies\Unity.Services.QoS.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Relay">
+    <Reference Include="Unity.Services.Relay, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Services.Relay.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
+    <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
+    <Reference Include="Unity.Timeline, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Runtime">
-      <HintPath>..\Assemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\Assemblies\UnityEngine.dll</HintPath>
@@ -244,13 +303,15 @@
     <Reference Include="UnityEngine.AccessibilityModule">
       <HintPath>..\Assemblies\UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.AIModule">
+    <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AndroidJNIModule">
       <HintPath>..\Assemblies\UnityEngine.AndroidJNIModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ARModule">
@@ -259,7 +320,8 @@
     <Reference Include="UnityEngine.AssetBundleModule">
       <HintPath>..\Assemblies\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.AudioModule">
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
@@ -274,13 +336,15 @@
     <Reference Include="UnityEngine.ContentLoadModule">
       <HintPath>..\Assemblies\UnityEngine.ContentLoadModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule">
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CrashReportingModule">
       <HintPath>..\Assemblies\UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.DirectorModule">
+    <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DSPGraphModule">
@@ -292,43 +356,53 @@
     <Reference Include="UnityEngine.GIModule">
       <HintPath>..\Assemblies\UnityEngine.GIModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.GridModule">
+    <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HotReloadModule">
       <HintPath>..\Assemblies\UnityEngine.HotReloadModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.InputModule">
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.InputModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
+    <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.LocalizationModule">
       <HintPath>..\Assemblies\UnityEngine.LocalizationModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.NVIDIAModule">
+    <Reference Include="UnityEngine.NVIDIAModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.NVIDIAModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule">
       <HintPath>..\Assemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Physics2DModule">
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ProfilerModule">
@@ -343,13 +417,15 @@
     <Reference Include="UnityEngine.ScreenCaptureModule">
       <HintPath>..\Assemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
+    <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
       <HintPath>..\Assemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.SpriteShapeModule">
+    <Reference Include="UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StreamingModule">
@@ -358,40 +434,50 @@
     <Reference Include="UnityEngine.SubstanceModule">
       <HintPath>..\Assemblies\UnityEngine.SubstanceModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.SubsystemsModule">
+    <Reference Include="UnityEngine.SubsystemsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.SubsystemsModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
+    <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule">
       <HintPath>..\Assemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+    <Reference Include="UnityEngine.TextCoreFontEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+    <Reference Include="UnityEngine.TextCoreTextEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
+    <Reference Include="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TLSModule">
+    <Reference Include="UnityEngine.TLSModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.TLSModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
+    <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsNativeModule">
       <HintPath>..\Assemblies\UnityEngine.UIElementsNativeModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UIModule">
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UmbraModule">
@@ -418,10 +504,12 @@
     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
       <HintPath>..\Assemblies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
+    <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
@@ -433,60 +521,46 @@
     <Reference Include="UnityEngine.VehiclesModule">
       <HintPath>..\Assemblies\UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.VFXModule">
+    <Reference Include="UnityEngine.VFXModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.VFXModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.VideoModule">
+    <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VirtualTexturingModule">
       <HintPath>..\Assemblies\UnityEngine.VirtualTexturingModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.VRModule">
+    <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
       <HintPath>..\Assemblies\UnityEngine.WindModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.XRModule">
+    <Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\UnityEngine.XRModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ContainerBuilderExtensions.cs" />
-    <Compile Include="Data\PathProvider.cs" />
-    <Compile Include="Data\PathProviderBase.cs" />
-    <Compile Include="Initializer.cs" />
-    <Compile Include="Patches\patch_PreInitSceneScript.cs" />
+    <Compile Include="ExampleMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Havoc\Havoc.csproj">
       <Project>{0319d30a-184f-4d4f-b3f5-5939b76b3f5d}</Project>
       <Name>Havoc</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MonoMod\MonoMod\MonoMod.csproj">
-      <Project>{8a17c958-5c33-4035-af76-f94a3aa2dc4f}</Project>
-      <Name>MonoMod</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>:: Mod assembly dll
-MonoMod.exe Assembly-CSharp.dll
-
-:: Overwrite assembly dll with modded dll
-mv MONOMODDED_Assembly-CSharp.dll Assembly-CSharp.dll
-rm MONOMODDED_Assembly-CSharp.pdb
-
-:: Remove loader dll
-rm Assembly-CSharp.HavocLoader.mm.dll
-rm Assembly-CSharp.HavocLoader.mm.dll.config
-rm Assembly-CSharp.HavocLoader.mm.pdb
-</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

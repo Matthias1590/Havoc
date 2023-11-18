@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Core;
 using Havoc.Extensions;
 using Havoc.Helpers;
 using Serilog;
@@ -32,7 +33,7 @@ namespace Havoc
 		{
 			_logger.Information("Loading mods in '{folder}'", folder);
 
-			var mods = GetModsInFolder(folder);
+			var mods = GetModsInFolder(folder).ToArray();
 
 			_logger.Information("Loaded {modCount} mod(s)", mods.Count());
 
@@ -65,10 +66,11 @@ namespace Havoc
 						_logger.Information("Skipping '{file}' since it's not a mod", file);
 					}
 
-					_logger.Information("Loading '{file}' mod", file);
+					_logger.Information("Loading '{file}'", file);
 					return isMod;
 				})
-				.Select(GetModFromFile);
+				.Select(GetModFromFile)
+				.ToArray();
 		}
 
 		private IMod GetModFromFile(string file)
@@ -80,7 +82,19 @@ namespace Havoc
 		{
 			// FIXME: If there's multiple mods in a single assembly, create some MultipleMod instance that contains all mods in the assembly
 			return GetModTypesFromAssembly(assembly)
-				.Select(_componentContext.ResolveUnregistered)
+				.Select(type =>
+				{
+					try
+					{
+						return _componentContext.ResolveUnregistered(type);
+					}
+					catch (DependencyResolutionException e)
+					{
+						_logger.Error(e, "Could not create an instance of '{typeName}'", type.Name);
+						return null;
+					}
+				})
+				.Where(m => m != null)
 				.Cast<IMod>()
 				.Single();
 		}

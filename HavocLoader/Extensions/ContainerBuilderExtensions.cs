@@ -5,7 +5,7 @@ using System;
 
 namespace Havoc.Extensions
 {
-	public static class ContainerBuilderExtensions
+	internal static class ContainerBuilderExtensions
 	{
 		public static IRegistrationBuilder<ILogger, SimpleActivatorData, SingleRegistrationStyle> RegisterLogger(this ContainerBuilder builder, Func<LoggerConfiguration, LoggerConfiguration> configure)
 		{
